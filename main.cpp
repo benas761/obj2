@@ -64,7 +64,7 @@ float Final(float avg, int m) {
 
 float Average(stud x) {
     double avg = std::accumulate(x.nd.begin(), x.nd.end(), 0.0)/x.nd.size();
-    return Final(avg/x.nd.size(), x.exam);
+    return Final(avg, x.exam);
 }
 
 float Median(stud x) {
