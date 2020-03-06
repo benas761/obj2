@@ -68,5 +68,10 @@ bool compareByName(stud a, stud b) {
 }
 
 string whichFile(int n) {
-	return("generated.txt");
-}
+	std::ifstream infile("kursiokai.txt");
+	if (infile.good()) return("kursiokai.txt");
+	else {
+		infile.close();
+		CreateInput(n, 5); // Kiek mokiniu, kiek namu darbu
+		return("generated.txt");
+	}
