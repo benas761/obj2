@@ -43,7 +43,7 @@ void Input(vector<stud> &x, string input = "Generated.txt") {
 	fd.close();
 }
 
-void Output(vector<stud> x) {
+void Output(vector<stud> &x) {
 	cout << setw(18) << std::left << "Vardas" << setw(18) << std::left << "Pavarde" << "Galutinis (Vid.) / Galutinis (Med.)\n" <<"------------------------------------------------------------\n";
 	for(int i=0; i<x.size(); i++) {
 		cout <<setw(18)<<std::left<<x[i].name<<setw(18)<<std::left<<x[i].lname;
@@ -51,7 +51,7 @@ void Output(vector<stud> x) {
 	}
 }
 
-void Output2file(vector<stud> x, string out) {
+void Output2file(vector<stud> &x, string out) {
 	std::ofstream fr(out);
 	fr << setw(18) << std::left << "Vardas" << setw(18) << std::left << "Pavarde" << "Galutinis (Vid.) / Galutinis (Med.)\n" <<"------------------------------------------------------------\n";
 	for(int i=0; i<x.size(); i++) {
@@ -59,6 +59,11 @@ void Output2file(vector<stud> x, string out) {
 		fr <<std::setw(19)<<std::left<<x[i].avg<<setw(16)<<std::left<<x[i].medAvg<<endl;
 	}
 	fr.close();
+}
+
+void OutputTime(int i, timer fileGen, timer fileRead, timer calc, timer pick, timer out) {
+	cout << std::setprecision(5) << std::fixed << "| " << setw(9) << std::left << std::fixed << i << "|  " << setw(11) << fileGen.duration() << "| " << setw(10) << fileRead.duration() << "| " << setw(13) << calc.duration() << "| ";
+	cout << setw(11) << pick.duration() << "| " << setw(8) << out.duration() << "| " << setw(6) << fileGen.duration()+fileRead.duration()+calc.duration()+pick.duration() << "|\n";
 }
 
 bool compareByName(stud a, stud b) {
@@ -75,3 +80,4 @@ string whichFile(int n) {
 		CreateInput(n, 5); // Kiek mokiniu, kiek namu darbu
 		return("generated.txt");
 	}
+}
