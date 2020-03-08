@@ -1,7 +1,7 @@
 #include "imports.h"
 
 int main() {
-	cout << "|  Dydis   | Generavimas | Skaitymas | Skaiciavimas | Atrinkimas | Rasymas |  Viso  |\n";
+	cout << "|  Dydis   | Generavimas | Skaitymas | Skaiciavimas | Atrinkimas | Rasymas |   Viso   |\n";
 	for(int i=1000; i<pow(10, 8); i*=10) {
 		timer fileGen;
 		string input = whichFile(i); // Tikrina ar yra kursiokai.txt failas. Jeigu nera, kokio dydzio testo faila sukurti.
