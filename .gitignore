@@ -3,6 +3,8 @@ main
 
 Generated.txt
 
+generated.txt
+
 main
 
 Nepatenkinami.txt
@@ -13,8 +15,8 @@ results.txt
 
 *.o
 
-*.cbp
-
 *.depend
 
 *.layout
+
+bin/Debug/
